@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Tangy_DataAccess.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext
     {
 
 
@@ -28,6 +30,11 @@ namespace Tangy_DataAccess.Data
         public DbSet<OrderHeader> OrderHeaders { get; set; }
 
         public DbSet<OrderDetail> OrderDetails { get; set; }
+
+
+
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+
 
     }
 }
