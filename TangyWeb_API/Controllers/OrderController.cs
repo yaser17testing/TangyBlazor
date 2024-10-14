@@ -25,7 +25,7 @@ namespace TangyWeb_API.Controllers
 		public async Task<IActionResult> GetAll()
 		{
 
-			return Ok( await _orderRepository.GetAll());
+			return Ok(await _orderRepository.GetAll());
 		}
 
 
@@ -62,6 +62,17 @@ namespace TangyWeb_API.Controllers
 		}
 
 
+
+		[HttpPost]
+		[ActionName("Create")]
+
+		public async Task<IActionResult> Create([FromBody] StripePaymentDTO paymentDTO)
+		{
+
+			var result = await _orderRepository.Create(paymentDTO.Order);
+            return Ok(result);
+
+		}
 
 
 	}

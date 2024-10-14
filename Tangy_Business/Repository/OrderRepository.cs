@@ -48,7 +48,7 @@ namespace Tangy_Business.Repository
                 return new OrderDTO()
                 {
                     OrderHeader = _mapper.Map<OrderHeader,OrderHeaderDTO>(obj.OrderHeader),
-                    OrderDetails = _mapper.Map<IEnumerable<OrderDetail>,IEnumerable<OrderDetailDTO>>(obj.OrderDetails).ToList(),
+                    OrderDetails = _mapper.Map<IEnumerable<OrderDetail>,IEnumerable<OrderDetailDTO>>(obj.OrderDetails).ToList()
                 };
             }
             catch (Exception ex)
